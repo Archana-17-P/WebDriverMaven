@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -30,7 +30,11 @@ public class Login {
 	
 	@Test
 	public void enterTest() throws InterruptedException{
-		System.out.println("Hello");
+
+
+		System.out.println("--------------------------------------------");
+		System.out.println("       Checking changes in Jenkins       ");
+		System.out.println("--------------------------------------------");
 		driver.findElement(By.xpath("//*[@id='identifierId']")).sendKeys("apurva@gmail.com");
 		
 		driver.findElement(By.xpath("//*[@id='identifierNext']/div/button/span")).click();		
@@ -38,7 +42,7 @@ public class Login {
 		Thread.sleep(3000);
 	}
 	
-	@AfterTest()
+	@AfterSuite()
 	public void tearDown(){
 		driver.close();
 	}
